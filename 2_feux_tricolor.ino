@@ -9,23 +9,31 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite(leds[0], HIGH);
-  digitalWrite(leds[5], HIGH);
-  delay(2000);
-  digitalWrite(leds[1], HIGH);
-  digitalWrite(leds[0], LOW);
-  delay(1250);
-  digitalWrite(leds[2], HIGH);
-  digitalWrite(leds[5], LOW);
-  digitalWrite(leds[1], LOW);
-  digitalWrite(leds[3], HIGH);
-  delay(2000);
-  digitalWrite(leds[3], LOW);
-  digitalWrite(leds[4], HIGH);
-  delay(1250);
-  digitalWrite(leds[4], LOW);
-  digitalWrite(leds[2], LOW);
-  
+  feux(1250, 2000);
 }
 
+void feux(int ptidelay, int lngdelay) {
+  eteindre(4, 2);
+  allumer(0, 5);
+  delay(2000);
+  allumer(1, 666);
+  eteindre(0, 666);
+  delay(1250);
+  allumer(2, 3);
+  eteindre(5, 1);
+  delay(2000);
+  allumer(4, 666);
+  eteindre(3, 666);
+  delay(1250);
+}
+
+void allumer(int pin, int piin) {
+  digitalWrite(leds[pin], HIGH);
+  digitalWrite(leds[piin], HIGH);
+}
+
+void eteindre(int pin, int piin) {
+  digitalWrite(leds[pin], LOW);
+  digitalWrite(leds[piin], LOW);
+}
 
