@@ -1,8 +1,7 @@
 const int leds[6] = {1,2,3,4,5,6};
 
 void setup() {
-  for (int i = 0; i < 7; i++)
-  {
+  for (int i = 0; i < 7; i++) {
     pinMode(leds[i], OUTPUT);
     digitalWrite(leds[i], LOW);
   }
